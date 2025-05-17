@@ -1,6 +1,7 @@
 # Use-Diagram
 소프트웨어공학 - 배달 앱 시퀀스 다이어그램 과제
 
+sequenceDiagram
     User->>App: 앱 실행
     App->>Server: 사용자 정보 요청
     Server-->>App: 사용자 정보 응답
