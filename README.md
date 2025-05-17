@@ -1,11 +1,5 @@
 # Use-Diagram
 소프트웨어공학 - 배달 앱 시퀀스 다이어그램 과제
-sequenceDiagram
-    participant User as 사용자
-    participant App as 배달 앱
-    participant Server as 서버
-    participant Restaurant as 음식점
-    participant Delivery as 배달기사
 
     User->>App: 앱 실행
     App->>Server: 사용자 정보 요청
