@@ -1,0 +1,47 @@
+public class User {
+    public void placeOrder(App app, String foodName) {
+        System.out.println("User: Ordering " + foodName);
+        app.processOrder(this, foodName);
+    }
+}
+
+public class App {
+    private Server server = new Server();
+
+    public void processOrder(User user, String foodName) {
+        System.out.println("App: Sending order to server");
+        server.receiveOrder(foodName);
+    }
+}
+
+public class Server {
+    private Restaurant restaurant = new Restaurant();
+    private DeliveryAgent delivery = new DeliveryAgent();
+
+    public void receiveOrder(String foodName) {
+        System.out.println("Server: Forwarding order to restaurant");
+        restaurant.prepareFood(foodName);
+        System.out.println("Server: Requesting delivery");
+        delivery.deliverFood(foodName);
+    }
+}
+
+public class Restaurant {
+    public void prepareFood(String foodName) {
+        System.out.println("Restaurant: Preparing " + foodName);
+    }
+}
+
+public class DeliveryAgent {
+    public void deliverFood(String foodName) {
+        System.out.println("DeliveryAgent: Delivering " + foodName);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        User user = new User();
+        App app = new App();
+        user.placeOrder(app, "Kimchi Fried Rice");
+    }
+}
